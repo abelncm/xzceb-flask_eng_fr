@@ -1,7 +1,7 @@
+import os
 import json
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-import os
 from dotenv import load_dotenv
 import urllib3
 
@@ -26,7 +26,7 @@ language_translator.set_disable_ssl_verification(True)
 
 
 def translate(text, model_id):
-    if text == None:
+    if text is None or text == '':
         return 'Please provide text for translation!'
     translation = language_translator.translate(
         text=text,
@@ -34,9 +34,9 @@ def translate(text, model_id):
     # print(json.dumps(translation, indent=2, ensure_ascii=False))
     return translation['translations'][0]['translation']
 
-def englishToFrench(englishText):
-    return translate(englishText, 'en-fr')
+def english_to_french(english_text):
+    return translate(english_text, 'en-fr')
 
 
-def frenchToEnglish(frenchText):
-    return translate(frenchText, 'fr-en')
+def french_to_english(french_text):
+    return translate(french_text, 'fr-en')

@@ -2,16 +2,16 @@ import translator
 
 
 
-def testFrenchToEnglish():
-    translatedText = translator.frenchToEnglish('Bonjour')
-    assert translatedText == 'Hello'
-def testEnglishToFrench():
-    translatedText = translator.englishToFrench('Hello')
-    assert translatedText == 'Bonjour'
+def test_french_to_english():
+    translated_text = translator.french_to_english('Bonjour')
+    assert translated_text == 'Hello'
+def test_english_to_french():
+    translated_text = translator.english_to_french('Hello')
+    assert translated_text == 'Bonjour'
 
-def testFrenchToEnglishNull():
-    translatedText = translator.frenchToEnglish(None)
-    assert translatedText == 'Please provide text for translation!'
-def testEnglishToFrenchNull():
-    translatedText = translator.englishToFrench(None)
-    assert translatedText == 'Please provide text for translation!'
+def test_french_to_english_null():
+    translated_text = translator.french_to_english('')
+    assert translated_text == 'Please provide text for translation!'
+def test_english_to_french_null():
+    translated_text = translator.english_to_french('')
+    assert translated_text == 'Please provide text for translation!'
