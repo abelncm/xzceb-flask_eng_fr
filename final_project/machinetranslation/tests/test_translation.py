@@ -1,5 +1,4 @@
-import translator
-
+from machinetranslation import translator
 
 
 def test_french_to_english():
